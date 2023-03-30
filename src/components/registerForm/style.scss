@@ -1,0 +1,44 @@
+.P-registerBox {
+    width: 300px;
+    height: 350px;
+    border: 2px solid black;
+    text-align: center;
+    margin-top: 10px;
+    background-color: rgb(228, 235, 251);
+
+    .P-formClass {
+        width: 85%;
+        padding: 0 15px;
+        margin: 4px 0;
+    }
+
+    .P-radioClass {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: 0 15px;
+        padding: 0 8px;
+    }
+
+    .P-button {
+        width: 60%;
+        height: 30px;
+        margin: 15px 0;
+        box-shadow: 5px 5px 5px rgb(122, 122, 232);
+        background-color: rgb(124, 140, 242);
+        color: white;
+        
+    }
+
+    .P-button:hover {
+        background-color: rgb(185, 202, 247);
+    }
+    
+}
+
+.userBox{
+    width: 150px;
+    height: 150px;
+    background-color: aquamarine;
+}
