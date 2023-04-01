@@ -1,14 +1,21 @@
 // import React from "react";
 // import './style.scss'
-// import RegisterForm from "../registerForm";
+
+
 
 // class User extends React.Component {
 
+    
 
 //     render(){
 //         return <div className="newUser">
-//             <p>{`First Name : + ${this.getInputFirstName}`}</p>
-//             <p></p>
+//               <div>
+//                  <p>firstName: {item.firstName}</p>
+//                  <p>lastName: {item.lastName}</p>
+//                  <p>age: {item.age}</p>
+//                  <p>email: {item.email}</p>
+//                  <p>gender: {item.gender}</p>
+//                </div>
 //         </div>
 //     }
 // }

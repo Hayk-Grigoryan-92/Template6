@@ -46,16 +46,6 @@ class RegisterForm extends React.Component {
         gender: 'male'
       }
     })
-
-
-    // let user = []
-    // user.push(this.state.firstName, this.state.lastName, this.state.age, this.state.email, this.state.password, this.state.confirmPassword)
-    // console.log(user);
-    // let newUser = user.map(function (item) {
-    //   return <div>
-    //
-    //   </div>
-    // })
   }
 
 
@@ -124,19 +114,18 @@ class RegisterForm extends React.Component {
           Submit
         </button>
 
-        <div>
           {this.state.usersList.length ?
             this.state.usersList.map((item, index) => {
-              return <div>
-                <p>firstName: {item.firstName}</p>
-                <p>lastName: {item.lastName}</p>
-                <p>age: {item.age}</p>
-                <p>email: {item.email}</p>
-                <p>gender: {item.gender}</p>
-              </div>
+              return localStorage.setItem(index.toString(), JSON.stringify(item, index))
             })
             : <p>empty users list</p>}
-        </div>
+            
+        
+            <button className="P-registeredUsers" onClick={()=>{
+              
+            }}>Registered Users</button>
+
+     
       </div>
     )
   }
