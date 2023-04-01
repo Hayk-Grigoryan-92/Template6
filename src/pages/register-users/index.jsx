@@ -1,8 +1,8 @@
 import React from "react"
-import './style.scss'
 import '../../assets/styles/global.scss'
+import './style.scss'
 
-class RegisterForm extends React.Component {
+class RegisterUser extends React.Component {
 
   state = {
     formData: {
@@ -25,17 +25,17 @@ class RegisterForm extends React.Component {
   }
 
   createUser = () => {
+    let users = JSON.parse(localStorage.getItem('users-list'))
 
-    console.log(this.state.formData)
-    // example 1
-    // let arr = []
-    // arr = this.state.usersList
-    // arr.push(this.state.formData)
-    // this.setState({userList: arr})
+    if (users && users.length) {
+      users.push(this.state.formData)
+    } else {
+      users = [this.state.formData]
+    }
 
+    localStorage.setItem('users-list', JSON.stringify(users))
     // example 2
     this.setState({
-      usersList: [...this.state.usersList, this.state.formData],
       formData: {
         firstName: '',
         lastName: '',
@@ -50,7 +50,7 @@ class RegisterForm extends React.Component {
 
 
   render() {
-    return (
+    return <>
       <div className={"P-registerBox "}>
         <div className={`P-formClass`}>
           <label className="G-input">
@@ -109,26 +109,12 @@ class RegisterForm extends React.Component {
             />
           </label>
         </div>
-
         <button className="P-button" onClick={this.createUser}>
           Submit
         </button>
-
-          {this.state.usersList.length ?
-            this.state.usersList.map((item, index) => {
-              return localStorage.setItem(index.toString(), JSON.stringify(item, index))
-            })
-            : <p>empty users list</p>}
-            
-        
-            <button className="P-registeredUsers" onClick={()=>{
-              
-            }}>Registered Users</button>
-
-     
       </div>
-    )
+    </>
   }
 }
 
-export default RegisterForm
+export default RegisterUser
